@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PostController < ApplicationController
+class PostsController < ApplicationController
   before_action :require_login, only: %i[create destroy update]
   before_action :authorize, only: [:destroy]
 

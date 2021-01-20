@@ -1,4 +1,4 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   def index
     redirect_to root_path
   end

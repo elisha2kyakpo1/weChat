@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
   before_action :require_login
   def index
     redirect_to comments_path
