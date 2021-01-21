@@ -1,8 +1,8 @@
 <div class = "new">
-	<div>
-			<h1>New Post</h1>
+  <div>
+      <h1>New Post</h1>
 
-			<%= form_with(model: @post, local: true) do |form| %>
+      <%= form_with(model: @post, local: true) do |form| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this Post from being saved:</h2>
@@ -14,21 +14,33 @@
       </ul>
     </div>
   <% end %>
+  <div>
+    <nav>
+      <% if current_user %>
+       <%= link_to 'Sign Out', session, :class => 'signout', method: :DELETE, data: { confirm: "Are you sure?" } %>
+       <% end %>
+    </nav>
+  </div> 
 
   <div class="fields">
+    <div class="fields">
 
-		<div class="fields">
+      <%= form.label :Title %><br>
+      <%= form.text_area :Title, :class => 'text_form' %>
+    </div>
 
-			<%= form.label :body %><br>
-			<%= form.text_area :body, :class => 'text_form' %>
-		</div>
+    <div class="fields">
 
-		<div class="actions">
-		<p><%= form.submit 'Create', :class => 'sub' %></p>
-		</div>
+      <%= form.label :Body %><br>
+      <%= form.text_area :Body, :class => 'text_form' %>
+    </div>
+
+    <div class="actions">
+    <p><%= form.submit 'Create', :class => 'sub' %></p>
+    </div>
   </div>
 <% end %>
 
-			<%= link_to 'Back', posts_path, :class => 'back' %>
-		</div>
+      <%= link_to 'Back', posts_path, :class => 'back' %>
+    </div>
 </div>

@@ -18,8 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:current_user_id)
-    @current_user = nil
-    redirect_to new_path
+    session[:user_id] = nil
+    redirect_to posts_path, notice: 'you succussfully logged out'
   end
 end
