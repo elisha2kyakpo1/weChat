@@ -17,7 +17,7 @@
   <div>
     <nav>
       <% if current_user %>
-       <%= link_to 'Sign Out', session, :class => 'signout', method: :DELETE, data: { confirm: "Are you sure?" } %>
+       <%= link_to 'Sign Out', sessions_path, :class => 'signout', method: :DELETE, data: { confirm: "Are you sure?" } %>
        <% end %>
     </nav>
   </div> 
